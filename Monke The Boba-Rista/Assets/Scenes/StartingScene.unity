@@ -453,6 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3470f2f0130891a4dbc085192d1cbe28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bobaOrderDisplay: {fileID: 488580447}
 --- !u!1 &488580445
 GameObject:
   m_ObjectHideFlags: 0
