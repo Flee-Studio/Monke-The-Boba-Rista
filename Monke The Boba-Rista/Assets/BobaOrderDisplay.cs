@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,17 +10,50 @@ public class BobaOrderDisplay : MonoBehaviour
 {
 
     public TextMeshProUGUI bobaOrderDisplay;
+    public TextMeshProUGUI timerText;
+    private float timer = 0.0f;
+    private float timeDisplayTimer = 0.0f;
 
-    protected string[] fruits = { "Mango", "Strawberry" };
-    protected string[] teaBase = { "Black", "Green", "Oolong" };
-    protected string[] creamer = { "Tea", "Milk Tea" };
-    
+    private float waitTime = 2.0f;
+
+    private string[] fruits = { "Mango", "Strawberry" };
+    private string[] teaBase = { "Black", "Green", "Oolong" };
+    private string[] creamer = { "Tea", "Milk Tea" };
+
 
     // Start is called before the first frame update
+
+    /*
     void Start()
     {
-        string test = GenerateBobaOrder();
-        bobaOrderDisplay.text += "\n" + test;
+        InvokeRepeating("GenerateBobaOrder", 5.0f, 2.0f);
+    }
+    */
+
+    void Update()
+    {
+        
+        timer += Time.deltaTime;
+        timeDisplayTimer += Time.deltaTime;
+
+        int timerInSec = Mathf.FloorToInt(timeDisplayTimer % 60);
+        timerText.text = timerInSec.ToString();
+
+        
+        if (timer > waitTime)
+        {
+            //Debug.Log(timr);
+            Debug.Log("2 seconds");
+
+
+            //generate a new boba order
+            string bobaOrder = GenerateBobaOrder();
+            bobaOrderDisplay.text += "\n" + bobaOrder;
+            timer = timer - waitTime;
+        }
+        
+
+
     }
 
     private string GenerateBobaOrder()
@@ -45,15 +79,8 @@ public class BobaOrderDisplay : MonoBehaviour
         creamerText = creamer[creamerChoice];
 
         finalOrder = fruitText + " " + teaBaseText + " " + creamerText;
-
+        //bobaOrderDisplay.text += "\n" + finalOrder;
         return finalOrder;
     }
 
-    // Update is called once per frame
-    /*
-    void Update()
-    {
-        
-    }
-    */
 }
