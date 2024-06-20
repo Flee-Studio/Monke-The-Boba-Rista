@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 368279094}
   - component: {fileID: 368279093}
   - component: {fileID: 368279097}
+  - component: {fileID: 368279098}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -450,7 +451,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368279092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3470f2f0130891a4dbc085192d1cbe28, type: 3}
   m_Name: 
@@ -458,6 +459,18 @@ MonoBehaviour:
   bobaOrderDisplay: {fileID: 2083603977}
   timerText: {fileID: 381728198}
   bobaCountText: {fileID: 1416715690}
+--- !u!114 &368279098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368279092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e30c2da96651d40bd66b7a8d8fc750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &381728196
 GameObject:
   m_ObjectHideFlags: 0
