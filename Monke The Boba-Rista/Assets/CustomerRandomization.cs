@@ -17,12 +17,13 @@ public class CustomerRandomization : MonoBehaviour
 
     private float timer = 0.0f;
     private float waitTime = 2.0f;
+    public GameObject customerGroupPreFab;
 
     public class CustomerGroup
     {
 
         private int[] groupCountRand = { 1, 2, 4 };
-        private int groupCount;
+        public int groupCount;
         private string groupName;
         private List<BobaOrder> bobaOrders;
 
@@ -75,7 +76,7 @@ public class CustomerRandomization : MonoBehaviour
 
         public string displayCustomer()
         {
-            string customer = "Group Count: " + groupCount + ", Name " + groupName + ", Boba Orders: ";
+            string customer = "Group Count: " + groupCount + ", Name: " + groupName + ", Boba Orders: ";
            
             for(int i = 0; i < bobaOrders.Count; i++)
             {
@@ -158,7 +159,12 @@ public class CustomerRandomization : MonoBehaviour
             Debug.Log(customerGroup.displayCustomer());
             customers.Add(customerGroup);
 
-            Debug.Log(customers.Count);
+            for (int i = 0; i < customerGroup.groupCount; i++)
+            {
+                Instantiate(customerGroupPreFab, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
+            }
+
+            Debug.Log("Customer Count: " + customers.Count);
 
 
 
