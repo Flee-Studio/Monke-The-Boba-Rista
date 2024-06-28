@@ -451,14 +451,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368279092}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3470f2f0130891a4dbc085192d1cbe28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobaOrderDisplay: {fileID: 2083603977}
-  timerText: {fileID: 381728198}
-  bobaCountText: {fileID: 1416715690}
 --- !u!114 &368279098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e30c2da96651d40bd66b7a8d8fc750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  waitTime: 2
   customerGroupPreFab: {fileID: 2065114097}
 --- !u!1 &381728196
 GameObject:
@@ -1138,8 +1137,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 0.9982669
+    width: 0.6237817
+    height: 0.8318891
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

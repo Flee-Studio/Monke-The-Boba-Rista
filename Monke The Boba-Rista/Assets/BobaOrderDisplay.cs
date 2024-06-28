@@ -4,11 +4,13 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using scripts.CustomerRandomization;
 
 public class BobaOrderDisplay : MonoBehaviour
 {
+    //CustomerRandomization.
 
+    /*
     public TextMeshProUGUI bobaOrderDisplay;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI bobaCountText;
