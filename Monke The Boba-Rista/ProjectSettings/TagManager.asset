@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: base
+    uniqueID: 1708923701
+    locked: 0
+  - name: topping
+    uniqueID: 1667052649
+    locked: 0
+  - name: straw
+    uniqueID: 4252961987
+    locked: 0
+  - name: cup
+    uniqueID: 1939771209
+    locked: 0
