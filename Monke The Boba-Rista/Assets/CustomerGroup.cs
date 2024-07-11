@@ -5,17 +5,18 @@ using UnityEngine;
     public class CustomerGroup : MonoBehaviour
     {
 
-        // randomizing customer groups
+            // randomizing customer groups
 
-        //single(1 person/ drink)
+            //single(1 person/ drink)
 
-        //couple(2 people/ 2 drinks)
+            //couple(2 people/ 2 drinks)
 
-        //Boba Fiends(4 people/4 drinks)
+            //Boba Fiends(4 people/4 drinks)
 
-        
-        public GameObject customerGroupPreFab;
-        //public BobaOrder bobaOrder;
+            
+
+            public GameObject customerGroupPreFab;
+            //public BobaOrder bobaOrder;
 
        
             private int[] groupCountRand = { 1, 2, 4 };
@@ -23,7 +24,7 @@ using UnityEngine;
             private string groupName;
             public List<BobaOrder> bobaOrders;
 
-            public CustomerGroup()
+            private void Awake()
             {
                 groupCount = setGroupCount();
                 groupName = setGroupName(groupCount);

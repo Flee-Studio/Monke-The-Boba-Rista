@@ -17,7 +17,7 @@ using UnityEngine.UI;
             public string teaBaseChoice;
             public string milkChoice;
 
-            public BobaOrder()
+            private void Awake()
             {
                 fruitChoice = generateFruitChoice();
                 teaBaseChoice = generateTeaBaseChoice();
