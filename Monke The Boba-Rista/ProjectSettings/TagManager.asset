@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CustomerGroup
+  - Ingredient_Cup
+  - Boba_Ingredient
+  - Boba
   layers:
   - Default
   - TransparentFX
@@ -42,15 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: base
-    uniqueID: 1708923701
+  - name: ingredient
+    uniqueID: 1507420573
     locked: 0
-  - name: topping
-    uniqueID: 1667052649
-    locked: 0
-  - name: straw
-    uniqueID: 4252961987
-    locked: 0
-  - name: cup
-    uniqueID: 1939771209
+  - name: Cup
+    uniqueID: 347252211
     locked: 0
