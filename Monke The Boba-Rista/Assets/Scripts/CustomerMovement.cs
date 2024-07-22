@@ -12,16 +12,28 @@ public class CustomerMovement : MonoBehaviour
     Vector3 previousPosition;
     SpriteRenderer spriteRenderer;
     public Vector3 exitPosition;
-    private Toggle myToggle;
+    public Toggle myToggle;
+    public bool waitingToDelete = false;
+    private CustomerSpawner parentScript;
 
     // Start is called before the first frame update
     void Start()
     {
         myToggle = GetComponentInChildren<Toggle>();
+        parentScript = GetComponentInParent<CustomerSpawner>();
 
         if (myToggle != null)
 		{
             myToggle.onValueChanged.AddListener(OnToggleValueChanged);
+		}
+        else
+		{
+            Debug.LogError("Toggle component not found");
+		}
+
+        if (parentScript == null)
+		{
+            Debug.LogError("CustomerSpawner not found in parent.");
 		}
 
         animator = GetComponent<Animator>();
@@ -56,6 +68,11 @@ public class CustomerMovement : MonoBehaviour
 
             previousPosition = currentPosition;
         }
+
+        if (waitingToDelete && Vector3.Distance(exitPosition, currentPosition) < 0.001f)
+		{
+            Destroy(gameObject);
+		}
     }
 
     void OnToggleValueChanged(bool isOn)
@@ -73,7 +90,12 @@ public class CustomerMovement : MonoBehaviour
 
     void ExecuteFunction()
 	{
-        transform.position = exitPosition;
+        targetPosition = exitPosition;
+        waitingToDelete = true;
+        if (parentScript != null)
+		{
+            parentScript.NotifyChildDestroyed(gameObject);
+		}
 	}
 
 	private void OnDestroy()
@@ -83,5 +105,6 @@ public class CustomerMovement : MonoBehaviour
 		{
             myToggle.onValueChanged.RemoveListener(OnToggleValueChanged);
 		}
-	}
+        Debug.Log(gameObject.name + " was destroyed");
+    }
 }

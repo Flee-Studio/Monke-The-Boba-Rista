@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Customer
 {
-    private GameObject _customerObject;
+    public GameObject _customerObject;
     int queuePosition;
     public int CustomerNumber;
     private CustomerQueue _customerQueue;

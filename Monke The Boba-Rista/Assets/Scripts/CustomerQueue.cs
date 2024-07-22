@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomerQueue : MonoBehaviour
+public class CustomerQueue
 {
     public List<Customer> customerQueue = new List<Customer>();
     private GameObject _customerObject;
