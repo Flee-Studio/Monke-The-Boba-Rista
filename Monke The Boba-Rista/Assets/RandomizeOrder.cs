@@ -5,11 +5,11 @@ using UnityEngine;
 public class RandomizeOrder : MonoBehaviour { 
     public float timer = 0.0f;
     public float waitTime = 2.0f;
-    private CustomerGroup CustomerGroup;
+    private Customer CustomerGroup;
     
 
     // Update is called once per frame
-    public List<CustomerGroup> customers = new List<CustomerGroup>();
+    public List<Customer> customers = new List<Customer>();
     // Update is called once per frame
     void Update()
     {
@@ -24,10 +24,11 @@ public class RandomizeOrder : MonoBehaviour {
         {
             Debug.Log("2 seconds");
 
-            CustomerGroup customerGroup = new CustomerGroup();
-            Debug.Log(customerGroup.displayCustomer());
+            Customer customerGroup = new Customer();
+            //Debug.Log(customerGroup.displayCustomer());
             customers.Add(customerGroup);
 
+            /*
             for (int i = 0; i < customerGroup.groupCount; i++)
             {
                 Instantiate(CustomerGroup.customerGroupPreFab, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
@@ -35,7 +36,7 @@ public class RandomizeOrder : MonoBehaviour {
 
             Debug.Log("Customer Count: " + customers.Count);
 
-
+            */
 
             //reset timer 
             timer = timer - waitTime;
