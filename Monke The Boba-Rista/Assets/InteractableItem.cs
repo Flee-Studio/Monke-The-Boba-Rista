@@ -52,7 +52,6 @@ public class InteractableItem : MonoBehaviour
             if(Keyboard.current.eKey.wasPressedThisFrame && grabbedItem == null)
             {
                 grabbedItem = hitInfo.collider.gameObject;
-                grabbedItem.GetComponent<Rigidbody2D>().isKinematic = true;
                 grabbedItem.transform.position = grabPoint.position;
                 grabbedItem.transform.SetParent(grabPoint);
             }
@@ -60,16 +59,10 @@ public class InteractableItem : MonoBehaviour
             //drop object
             else if (Keyboard.current.eKey.wasPressedThisFrame)
             {
-                //grabbedItem.GetComponent<Rigidbody2D>().isKinematic = false;
-                grabbedItem.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 grabbedItem.transform.SetParent(null);
                 grabbedItem = null;
             }
         }
-
-
-
-        //Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
     }
 
 }
