@@ -7,6 +7,7 @@ public class Customer : MonoBehaviour
 {
 
     private string groupName;
+    private int groupCount;
     private SpriteRenderer spriteRend;
     private Sprite[] sprites;
     private Sprite customerSprite;
@@ -21,17 +22,15 @@ public class Customer : MonoBehaviour
     void Start()
     {
         //Randomly Choose the Sprite
-       
         spriteRend = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("Customer/Customers_asset");
         int customerNum = Random.Range(0, sprites.Length);
         Debug.Log("Customer SPrite: " + sprites.Length);
-        
         spriteRend.sprite = sprites[customerNum];
     }
 
 
-    private string setGroupName(int groupCount)
+    private string SetGroupName(int groupCount)
     {
 
         //change groupcount to ENUM
@@ -54,34 +53,38 @@ public class Customer : MonoBehaviour
         return name;
 
     }
+    
     /*
-            private List<BobaOrder> setBobaOrders(int groupCount)
-            {
-                List<BobaOrder> bobaList = new List<BobaOrder>();
-                for (int i = 0; i < groupCount; i++)
-                {
-                    BobaOrder order = new BobaOrder();
-                    bobaList.Add(order);
-                }
+    private void SetBobaOrders(int groupCount)
+    {
+        //List<BobaOrder> bobaList = new List<BobaOrder>();
+        for (int i = 0; i < groupCount; i++)
+        {
+            
+            //GameObject order = Instantiate()
+            BobaOrder order = gameObject.AddComponent<BobaOrder>();
+            bobaList.Add(order);
+        }
 
-                return bobaList;
-            }
-    */
+        //return bobaList;
+    }
+    
 
-    /*
-            public string displayCustomer()
-            {
-                string customer = "Group Count: " + groupCount + ", Name: " + groupName + ", Boba Orders: ";
+    
+    public string displayCustomer()
+    {
+        string customer = "Group Count: " + groupCount + ", Name: " + groupName + ", Boba Orders: ";
 
-                /*
-
-                for (int i = 0; i < bobaOrders.Count; i++)
-                {
-                    customer += bobaOrders[i].displayOrder() + ", ";
-                }
                 
 
-                return customer;
-            }
+        for (int i = 0; i < bobaList.Count; i++)
+        {
+            customer += bobaList[i].displayOrder() + ", ";
+        }
+                
+
+        return customer;
+    }
     */
+    
 }
