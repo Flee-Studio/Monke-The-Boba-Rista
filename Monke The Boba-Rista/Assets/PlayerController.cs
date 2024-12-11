@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
         if (movementInput.x < 0)
         {
 			spriteRenderer.flipX = true;
-		}
+        }
         else if (movementInput.x > 0)
         {
             spriteRenderer.flipX = false;
@@ -95,5 +96,10 @@ public class PlayerController : MonoBehaviour
 	void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>();
+    }
+
+    public SpriteRenderer GetSpriteRenderer() //Added by Thera for Item Collision ticket
+    {
+        return spriteRenderer;
     }
 }
